@@ -27,8 +27,8 @@ def quadratic(a, b, c):
 ############################################################################
 
 while True:
-    choice = input("Enter Operation: \n 1.Add \n 2.Subtract \n 3.Multiply \n 4.Divide \nChoice:")
-    if choice in ('1', '2', '3', '4',):
+    choice = input("Enter Operation: \n 1.Add \n 2.Subtract \n 3.Multiply \n 4.Divide \n 5.Quadratic \n Choice:")
+    if choice in ('1', '2', '3', '4'):
         try:
             num1 = float(input("Enter first number: "))
             num2 = float(input("Enter second number: "))
@@ -50,14 +50,18 @@ while True:
 
     elif choice in ('5'):
         try:
-            a = float(input("Enter first number: "))
-            b = float(input("Enter second number: "))
-            c = float(input("Enter third number: "))
+            a = float(input("Enter first coefficient: "))
+            b = float(input("Enter second coefficient: "))
+            c = float(input("Enter third coefficient: "))
+
+            print("Coefficients: ", a , "x^2 + ", b, "x +", c)
+
+            if a == 0:
+                print("A must not equal 0")
+                break
         except Error:
             print("Input Error")
             continue
-
-        print("Coefficients: ", a , "x^2 + ", b, "X +", c)
 
         repeat = input("Do you want to make another calculation? (y,n)")
         if repeat == "n":
