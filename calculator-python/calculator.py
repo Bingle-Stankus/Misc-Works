@@ -21,7 +21,17 @@ def division(x, y):
 
 def quadratic(a, b, c):
     lhs = (-b)/(2*a)
-    rhs = math.sqrt(abs(b * b - 4 * a *c))/(2*a)
+    disc = b * b - 4 * a * c
+    rhs = math.sqrt(abs(disc))/(2*a)
+    print(lhs)
+    print(rhs)
+
+    if disc > 0:
+        print("Two Real Roots: " , lhs , " +/- " , rhs)
+    elif disc == 0:
+        print("One Real Root: ", lhs)
+    elif disc < 0:
+        print("Two Complex Roots: " , lhs , " +/- " , rhs , "i")    
 
 
 ############################################################################
@@ -54,7 +64,8 @@ while True:
             b = float(input("Enter second coefficient: "))
             c = float(input("Enter third coefficient: "))
 
-            print("Coefficients: ", a , "x^2 + ", b, "x +", c)
+            print("Quadratic: ", a , "x^2 + ", b, "x +", c)
+            quadratic(a,b,c)
 
             if a == 0:
                 print("A must not equal 0")
